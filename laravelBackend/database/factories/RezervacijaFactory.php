@@ -17,7 +17,14 @@ class RezervacijaFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'putnikId' => $this->faker->randomDigitNot(0),
+            'destinacijaId' => $this->faker->randomDigitNot(0),
+            'datumOd' => $this->faker->date(),
+            'datumDo' => $this->faker->date(),
+            'avans' => $this->faker->randomNumber(4),
+            'smestaj' => $this->faker->sentence(1),
+            'status' => $this->faker->sentence(1),
+            'brojOsoba' => $this->faker->randomDigitNot(0),
         ];
     }
 }

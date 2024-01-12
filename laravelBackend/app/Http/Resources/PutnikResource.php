@@ -14,6 +14,11 @@ class PutnikResource extends JsonResource
      */
     public function toArray($request)
     {
-        return parent::toArray($request);
+        return [
+            'Ime' => $this->resource->Ime,
+            'Prezime' => $this->resource->Prezime,
+            'Godine' => $this->resource->Godine,
+            'Interesovanja' => $this->resource->Interesovanja
+        ];
     }
 }

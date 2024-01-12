@@ -20,7 +20,7 @@ class PutnikFactory extends Factory
             'Ime' => $this->faker->name,
             'Prezime' => $this->faker->lastName,
             'Godine' => $this->faker->randomNumber(2),
-            'Interesovanja' => $this->faker->words(3)
+            'Interesovanja' => $this->faker->word
         ];
     }
 }

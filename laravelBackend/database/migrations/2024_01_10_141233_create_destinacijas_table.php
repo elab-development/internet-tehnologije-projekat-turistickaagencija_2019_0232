@@ -16,13 +16,6 @@ return new class extends Migration
         Schema::create('destinacijas', function (Blueprint $table) {
             $table->id();
 
-            // 'Naziv'
-            // 'GeoSirina' 
-            // 'GeoDuzina'
-            // 'Opis'
-            // 'Klima'
-            // 'Atrakcije'
-
             $table->string('Naziv');
             $table->float('GeoSirina');
             $table->float('GeoDuzina');

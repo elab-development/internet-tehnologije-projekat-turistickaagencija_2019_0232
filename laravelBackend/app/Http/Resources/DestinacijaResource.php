@@ -14,6 +14,13 @@ class DestinacijaResource extends JsonResource
      */
     public function toArray($request)
     {
-        return parent::toArray($request);
+        return [
+            'Naziv' => $this->resource->Naziv,
+            'GeoSirina' => $this->resource->GeoSirina,
+            'GeoDuzina' => $this->resource->GeoDuzina,
+            'Opis' => $this->resource->Opis,
+            'Klima' => $this->resource->Klima,
+            'Atrakcije' => $this->resource->Atrakcije
+        ];
     }
 }

@@ -20,9 +20,9 @@ class DestinacijaFactory extends Factory
             'Naziv' => $this->faker->word,
             'GeoSirina' => $this->faker->randomNumber(2),
             'GeoDuzina' => $this->faker->randomNumber(2),
-            'Opis' => $this->faker->words(3),
+            'Opis' => $this->faker->word,
             'Klima' => $this->faker->word,
-            'Atrakcije' => $this->faker->words(3),
+            'Atrakcije' => $this->faker->word,
         ];
     }
 }
