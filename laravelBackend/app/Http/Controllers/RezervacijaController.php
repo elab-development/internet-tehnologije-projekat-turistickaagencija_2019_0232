@@ -8,8 +8,6 @@ use Illuminate\Http\Request;
 
 class RezervacijaController extends Controller
 {
-
-    //moji kontroleri
     public function getAllRezervacijas()
     {
         $rezervacijas = Rezervacija::all();
@@ -20,33 +18,49 @@ class RezervacijaController extends Controller
     public function addRezervacija()
     {
         request()->validate([
-            'Ime' => 'required',
-            'Prezime' => 'required',
-            'Godine' => 'required',
-            'HronicneBolesti' => 'required'
+            'putnikId' => 'required',
+            'destinacijaId' => 'required',
+            'datumOd' => 'required',
+            'datumDo' => 'required',
+            'avans' => 'required',
+            'smestaj' => 'required',
+            'status' => 'required',
+            'brojOsoba' => 'required'
         ]);
-        return Pacijent::create([
-            'Ime' => request('Ime'),
-            'Prezime' => request('Prezime'),
-            'Godine' => request('Godine'),
-            'HronicneBolesti' => request('HronicneBolesti')
+        return Rezervacija::create([
+            'putnikId' => intval(request('putnikId')),
+            'destinacijaId' => intval(request('destinacijaId')),
+            'datumOd' => request('datumOd'),
+            'datumDo' => request('datumDo'),
+            'avans' => intval(request('avans')),
+            'smestaj' => request('smestaj'),
+            'status' => request('status'),
+            'brojOsoba' => intval(request('brojOsoba'))
         ]);
     }
 
-    public function editPacijent(Pacijent $pacijent)
+    public function editRezervacija(Rezervacija $rezervacija)
     {
         request()->validate([
-            'Ime' => 'required',
-            'Prezime' => 'required',
-            'Godine' => 'required',
-            'HronicneBolesti' => 'required'
+            'putnikId' => 'required',
+            'destinacijaId' => 'required',
+            'datumOd' => 'required',
+            'datumDo' => 'required',
+            'avans' => 'required',
+            'smestaj' => 'required',
+            'status' => 'required',
+            'brojOsoba' => 'required'
         ]);
 
-        $success = $pacijent->update([
-            'Ime' => request('Ime'),
-            'Prezime' => request('Prezime'),
-            'Godine' => request('Godine'),
-            'HronicneBolesti' => request('HronicneBolesti')
+        $success = $rezervacija->update([
+            'putnikId' => intval(request('putnikId')),
+            'destinacijaId' => intval(request('destinacijaId')),
+            'datumOd' => request('datumOd'),
+            'datumDo' => request('datumDo'),
+            'avans' => intval(request('avans')),
+            'smestaj' => request('smestaj'),
+            'status' => request('status'),
+            'brojOsoba' => intval(request('brojOsoba'))
         ]);
 
         return [
@@ -54,9 +68,9 @@ class RezervacijaController extends Controller
         ];
     }
 
-    public function deletePacijent(Pacijent $pacijent)
+    public function deleteRezervacija(Rezervacija $rezervacija)
     {
-        $success = $pacijent->delete();
+        $success = $rezervacija->delete();
 
         return [
             'success' => $success
@@ -92,15 +106,15 @@ class RezervacijaController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Pacijent $pacijent)
+    public function show(Rezervacija $rezervacija)
     {
-        return new PacijentResource($pacijent);
+        return new RezervacijaResource($rezervacija);
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Pacijent $pacijent)
+    public function edit(Rezervacija $rezervacija)
     {
         //
     }
@@ -108,7 +122,7 @@ class RezervacijaController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Pacijent $pacijent)
+    public function update(Request $request, Rezervacija $rezervacija)
     {
         //
     }
@@ -116,7 +130,7 @@ class RezervacijaController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Pacijent $pacijent)
+    public function destroy(Rezervacija $rezervacija)
     {
         //
     }

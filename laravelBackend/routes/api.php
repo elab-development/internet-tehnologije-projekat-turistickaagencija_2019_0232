@@ -3,6 +3,11 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\DestinacijaController;
+use App\Http\Controllers\PutnikController;
+use App\Http\Controllers\RezervacijaController;
+
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -18,5 +23,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+Route::resource('destinacijas', DestinacijaController::class);
 
 
