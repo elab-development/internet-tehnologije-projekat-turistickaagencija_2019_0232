@@ -8,26 +8,21 @@ return new class extends Migration
 {
     /**
      * Run the migrations.
-     *
-     * @return void
      */
-    public function up()
+    public function up(): void
     {
         Schema::table('rezervacijas', function (Blueprint $table) {
-            $table->foreignId('destinacijaId')->first()->onUpdate('cascade')->onDelete('cascade');
-            $table->foreignId('putnikId')->first()->onUpdate('cascade')->onDelete('cascade');
+            $table->dropColumn('avans');
         });
     }
 
     /**
      * Reverse the migrations.
-     *
-     * @return void
      */
-    public function down()
+    public function down(): void
     {
         Schema::table('rezervacijas', function (Blueprint $table) {
-            //
+            $table->integer('avans');
         });
     }
 };

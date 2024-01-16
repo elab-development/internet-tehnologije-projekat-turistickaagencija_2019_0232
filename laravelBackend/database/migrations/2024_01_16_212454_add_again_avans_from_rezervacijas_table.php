@@ -8,27 +8,21 @@ return new class extends Migration
 {
     /**
      * Run the migrations.
-     *
-     * @return void
      */
-    public function up()
+    public function up(): void
     {
         Schema::table('rezervacijas', function (Blueprint $table) {
-            $table->renameColumn('datumRezervacijeOd', 'datumOd');
-            $table->renameColumn('datumRezervacijeDo', 'datumDo');
+            $table->integer('avans');
         });
     }
 
     /**
      * Reverse the migrations.
-     *
-     * @return void
      */
-    public function down()
+    public function down(): void
     {
         Schema::table('rezervacijas', function (Blueprint $table) {
-            $table->renameColumn('datumOd', 'datumRezervacijeOd');
-            $table->renameColumn('datumDo', 'datumRezervacijeDo');
+            $table->dropColumn('avans');
         });
     }
 };

@@ -14,12 +14,12 @@ class DestinacijaFactory extends Factory
      *
      * @return array<string, mixed>
      */
-    public function definition()
+    public function definition(): array
     {
         return [
             'Naziv' => $this->faker->word,
-            'GeoSirina' => $this->faker->randomNumber(2),
-            'GeoDuzina' => $this->faker->randomNumber(2),
+            'GeoSirina' => $this->faker->numerify('##'),
+            'GeoDuzina' => $this->faker->numerify('##'),
             'Opis' => $this->faker->word,
             'Klima' => $this->faker->word,
             'Atrakcije' => $this->faker->word,

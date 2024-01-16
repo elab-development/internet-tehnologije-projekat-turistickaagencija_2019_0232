@@ -12,32 +12,23 @@ class DatabaseSeeder extends Seeder
 {
     /**
      * Seed the application's database.
-     *
-     * @return void
      */
-    public function run()
+    public function run(): void
     {
-        // \App\Models\User::factory(10)->create();
-
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
-
-        Destinacija::truncate();
         Putnik::truncate();
+        Destinacija::truncate();
         Rezervacija::truncate();
 
-        Destinacija::factory()
-            ->count(20)
+        Putnik::factory()
+            ->count(15)
             ->create();
 
-        Putnik::factory()
-            ->count(20)
+        Destinacija::factory()
+            ->count(15)
             ->create();
 
         Rezervacija::factory()
-            ->count(20)
+            ->count(15)
             ->create();
     }
 }

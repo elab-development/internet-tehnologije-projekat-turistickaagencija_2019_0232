@@ -14,17 +14,17 @@ class RezervacijaFactory extends Factory
      *
      * @return array<string, mixed>
      */
-    public function definition()
+    public function definition(): array
     {
         return [
-            'putnikId' => $this->faker->randomDigitNot(0),
-            'destinacijaId' => $this->faker->randomDigitNot(0),
-            'datumOd' => $this->faker->date(),
-            'datumDo' => $this->faker->date(),
-            'avans' => $this->faker->randomNumber(4),
-            'smestaj' => $this->faker->sentence(1),
-            'status' => $this->faker->sentence(1),
-            'brojOsoba' => $this->faker->randomDigitNot(0),
+            'putnik_id' => $this->faker->randomDigitNot(0),
+            'destinacija_id' => $this->faker->randomDigitNot(0),
+            'datumOd' => $this->faker->dateTimeThisYear(),
+            'datumDo' => $this->faker->dateTimeThisYear(),
+            'avans' => $this->faker->numerify('####'),
+            'smestaj' => $this->faker->sentence($nbWords = 1, $variableNbWords = true),
+            'status' => $this->faker->sentence($nbWords = 1),
+            'brojOsoba' => $this->faker->numerify('#')
         ];
     }
 }

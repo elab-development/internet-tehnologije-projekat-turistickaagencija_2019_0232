@@ -8,31 +8,28 @@ return new class extends Migration
 {
     /**
      * Run the migrations.
-     *
-     * @return void
      */
-    public function up()
+    public function up(): void
     {
         Schema::create('destinacijas', function (Blueprint $table) {
             $table->id();
 
             $table->string('Naziv');
-            $table->float('GeoSirina');
-            $table->float('GeoDuzina');
+            $table->string('GeoSirina');
+            $table->string('GeoDuzina');
             $table->string('Opis');
             $table->string('Klima');
             $table->string('Atrakcije');
             
+
             $table->timestamps();
         });
     }
 
     /**
      * Reverse the migrations.
-     *
-     * @return void
      */
-    public function down()
+    public function down(): void
     {
         Schema::dropIfExists('destinacijas');
     }

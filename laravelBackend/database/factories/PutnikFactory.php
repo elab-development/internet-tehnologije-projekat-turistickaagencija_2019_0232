@@ -14,12 +14,12 @@ class PutnikFactory extends Factory
      *
      * @return array<string, mixed>
      */
-    public function definition()
+    public function definition(): array
     {
         return [
             'Ime' => $this->faker->name,
             'Prezime' => $this->faker->lastName,
-            'Godine' => $this->faker->randomNumber(2),
+            'Godine' => $this->faker->numerify('##'),
             'Interesovanja' => $this->faker->word
         ];
     }

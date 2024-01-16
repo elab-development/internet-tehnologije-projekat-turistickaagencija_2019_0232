@@ -14,9 +14,8 @@ return new class extends Migration
     public function up()
     {
         Schema::table('rezervacijas', function (Blueprint $table) {
-            $table->boolean('unapredPlaceno')->nullable();
-            $table->date('datumRezervacijeOd')->nullable();
-            $table->date('datumRezervacijeDo');
+            $table->renameColumn('datumRezervacijeOd', 'datumOd');
+            $table->renameColumn('datumRezervacijeDo', 'datumDo');
         });
     }
 
@@ -28,9 +27,8 @@ return new class extends Migration
     public function down()
     {
         Schema::table('rezervacijas', function (Blueprint $table) {
-            $table->dropColumn('unapredPlaceno');
-            $table->dropColumn('datumRezervacijeOd');
-            $table->dropColumn('datumRezervacijeDo');
+            $table->renameColumn('datumOd', 'datumRezervacijeOd');
+            $table->renameColumn('datumDo', 'datumRezervacijeDo');
         });
     }
 };

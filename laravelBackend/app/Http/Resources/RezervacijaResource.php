@@ -2,6 +2,7 @@
 
 namespace App\Http\Resources;
 
+use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 class RezervacijaResource extends JsonResource
@@ -9,15 +10,14 @@ class RezervacijaResource extends JsonResource
     /**
      * Transform the resource into an array.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return array|\Illuminate\Contracts\Support\Arrayable|\JsonSerializable
+     * @return array<string, mixed>
      */
-    public function toArray($request)
+    public function toArray(Request $request): array
     {
         return [
-            'putnikId' => $this->resource->putnik,
-            'destinacijaId' => $this->resource->destinacija,
             'id' => $this->resource->id,
+            'Putnik' => $this->resource->putnik,
+            'Destinacija' => $this->resource->destinacija,
             'datumOd' => $this->resource->datumOd,
             'datumDo' => $this->resource->datumDo,
             'avans' => $this->resource->avans,

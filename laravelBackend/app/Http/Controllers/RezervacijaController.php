@@ -78,7 +78,6 @@ class RezervacijaController extends Controller
 
     }
 
-
     /**
      * Display a listing of the resource.
      */
@@ -108,7 +107,7 @@ class RezervacijaController extends Controller
      */
     public function show(Rezervacija $rezervacija)
     {
-        return new RezervacijaResource($rezervacija);
+        //
     }
 
     /**

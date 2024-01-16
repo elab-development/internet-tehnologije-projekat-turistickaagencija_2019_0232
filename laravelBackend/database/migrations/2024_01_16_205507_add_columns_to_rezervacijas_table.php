@@ -14,7 +14,6 @@ return new class extends Migration
     public function up()
     {
         Schema::table('rezervacijas', function (Blueprint $table) {
-            $table->integer('avans')->nullable();
             $table->string('smestaj');
             $table->string('status'); //potvrdjeno, na cekanju, otkazano
             $table->integer('brojOsoba');
@@ -29,7 +28,9 @@ return new class extends Migration
     public function down()
     {
         Schema::table('rezervacijas', function (Blueprint $table) {
-            //
+            $table->dropColumn('smestaj');
+            $table->dropColumn('status');
+            $table->dropColumn('brojOsoba');
         });
     }
 };
