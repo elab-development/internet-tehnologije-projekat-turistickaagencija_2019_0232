@@ -16,7 +16,7 @@ class DestinacijaController extends Controller
         return DestinacijaResource::collection($destinacijas);
     }
 
-    public function addDestinacija()
+    public function dodajDestinacije()
     {
         request()->validate([
             'Naziv' => 'required',
@@ -62,7 +62,7 @@ class DestinacijaController extends Controller
         ];
     }
 
-    public function deleteDestinacija(Destinacija $destinacija)
+    public function obrisiDestinacije(Destinacija $destinacija)
     {
         $success = $destinacija->delete();
 
@@ -77,7 +77,9 @@ class DestinacijaController extends Controller
      */
     public function index()
     {
-        //
+        $destinacija = Destinacija::latest()->paginate(4);
+ 
+        return view('destinacija',compact('destinacija'));
     }
 
     /**

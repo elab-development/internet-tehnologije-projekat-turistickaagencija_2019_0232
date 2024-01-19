@@ -16,7 +16,7 @@ class PutnikController extends Controller
         return PutnikResource::collection($putniks);
     }
 
-    public function addPutnik()
+    public function dodajPutnika()
     {
         request()->validate([
             'Ime' => 'required',
@@ -54,7 +54,7 @@ class PutnikController extends Controller
         ];
     }
 
-    public function deletePutnik(Putnik $putnik)
+    public function obrisiPutnika(Putnik $putnik)
     {
         $success = $putnik->delete();
 

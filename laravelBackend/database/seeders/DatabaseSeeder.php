@@ -15,9 +15,9 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        Putnik::truncate();
-        Destinacija::truncate();
-        Rezervacija::truncate();
+        Putnik::query()->delete();
+        Destinacija::query()->delete();
+        Rezervacija::query()->delete();
 
         Putnik::factory()
             ->count(15)

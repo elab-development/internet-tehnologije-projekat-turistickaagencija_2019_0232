@@ -15,11 +15,11 @@ class RezervacijaController extends Controller
         return RezervacijaResource::collection($rezervacijas);
     }
 
-    public function addRezervacija()
+    public function dodajRezervaciju()
     {
         request()->validate([
-            'putnikId' => 'required',
-            'destinacijaId' => 'required',
+            'putnik_id' => 'required',
+            'destinacija_id' => 'required',
             'datumOd' => 'required',
             'datumDo' => 'required',
             'avans' => 'required',
@@ -28,8 +28,8 @@ class RezervacijaController extends Controller
             'brojOsoba' => 'required'
         ]);
         return Rezervacija::create([
-            'putnikId' => intval(request('putnikId')),
-            'destinacijaId' => intval(request('destinacijaId')),
+            'putnik_id' => intval(request('putnik_id')),
+            'destinacija_id' => intval(request('destinacija_id')),
             'datumOd' => request('datumOd'),
             'datumDo' => request('datumDo'),
             'avans' => intval(request('avans')),
@@ -42,8 +42,8 @@ class RezervacijaController extends Controller
     public function editRezervacija(Rezervacija $rezervacija)
     {
         request()->validate([
-            'putnikId' => 'required',
-            'destinacijaId' => 'required',
+            'putnik_id' => 'required',
+            'destinacija_id' => 'required',
             'datumOd' => 'required',
             'datumDo' => 'required',
             'avans' => 'required',
@@ -53,8 +53,8 @@ class RezervacijaController extends Controller
         ]);
 
         $success = $rezervacija->update([
-            'putnikId' => intval(request('putnikId')),
-            'destinacijaId' => intval(request('destinacijaId')),
+            'putnik_id' => intval(request('putnik_id')),
+            'destinacija_id' => intval(request('destinacija_id')),
             'datumOd' => request('datumOd'),
             'datumDo' => request('datumDo'),
             'avans' => intval(request('avans')),
@@ -68,7 +68,7 @@ class RezervacijaController extends Controller
         ];
     }
 
-    public function deleteRezervacija(Rezervacija $rezervacija)
+    public function obrisiRezervaciju(Rezervacija $rezervacija)
     {
         $success = $rezervacija->delete();
 

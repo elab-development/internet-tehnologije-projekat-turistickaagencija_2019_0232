@@ -30,15 +30,18 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
     Route::resource('putniks', PutnikController::class);
     Route::get('/putniks', [PutnikController::class, 'getAllPutniks']);
     Route::post('/putniks', [PutnikController::class, 'dodajPutnika']);
+    Route::put('/putniks/{putnik}', [PutnikController::class, 'editPutnik']);
     Route::delete('/putniks/{putnik}', [PutnikController::class, 'obrisiPutnika']);
 
     Route::resource('rezervacijas', RezervacijaController::class);
     Route::get('/rezervacijas', [RezervacijaController::class, 'getAllRezervacijas']);
     Route::post('/rezervacijas', [RezervacijaController::class, 'dodajRezervaciju']);
+    Route::put('/rezervacijas/{rezervacija}', [RezervacijaController::class, 'editRezervacija']);
     Route::delete('/rezervacijas/{rezervacija}', [RezervacijaController::class, 'obrisiRezervaciju']);
 
     Route::resource('destinacijas', DestinacijaController::class);
     Route::post('/destinacijas', [DestinacijaController::class, 'dodajDestinacije']);
+    Route::put('/destinacijas/{destinacija}', [DestinacijaController::class, 'editDestinacija']);
     Route::delete('/destinacijas/{destinacija}', [DestinacijaController::class, 'obrisiDestinacije']);
 
     Route::post('/odjava', [AuthController::class, 'odjava']);
