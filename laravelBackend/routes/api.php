@@ -4,6 +4,7 @@ use App\Http\Controllers\API\AuthController;
 use App\Http\Controllers\DestinacijaController;
 use App\Http\Controllers\PutnikController;
 use App\Http\Controllers\RezervacijaController;
+use App\Http\Controllers\WeatherController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -49,3 +50,5 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
 });
 
 Route::get('/destinacijas', [DestinacijaController::class, 'getAllDestinacijas']);
+
+Route::get('/weather/{city}', [WeatherController::class, 'getCurrentWeather']);
