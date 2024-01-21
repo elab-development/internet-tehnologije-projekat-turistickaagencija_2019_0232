@@ -9,9 +9,8 @@ class WeatherController extends Controller
 {
     public function getCurrentWeather($city)
     {
-        $apiKey = 'f51d7a1fd20ff50f010d727e1b63a4ef';
-        $response = Http::get("https://api.openweathermap.org/data/2.5/weather?q='$city'&appid='$apiKey'");
-
+        $apiKey = 'e1b89cea7c2d456d8959b36edbfa9e0b';
+        $response = Http::get("https://api.openweathermap.org/data/2.5/weather?q=$city&appid=$apiKey");
         $weatherData = $response->json();
 
         return response()->json($weatherData);
