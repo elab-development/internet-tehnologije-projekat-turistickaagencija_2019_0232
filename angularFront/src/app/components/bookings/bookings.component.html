@@ -1,1 +1,31 @@
-<p>bookings works!</p>
+<table>
+   <ng-template pTemplate="header">
+        <tr>
+            <th class="table-header">Smestaj</th>
+            <th class="table-header">Datum od</th>
+            <th class="table-header">Datum do</th>
+            <th class="table-header">Broj osoba</th>
+            <th class="table-header">Cena</th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-booking>
+        <tr class="table-row">
+            <td>Ime</td>
+            <td>Datum od</td>
+            <td>Datum do</td>
+            <td>Broj osoba</td>
+            <td>Porez</td>
+        </tr>
+    </ng-template>
+</table>
+<div>
+    
+    <div style="display: flex; justify-content: center; margin-top: 2rem">
+        <h3>Rezervisi svoj smestaj ovog leta!</h3>
+    </div>
+    <div class="container accommodations-grid">
+       
+    </div>
+
+
+</div>
