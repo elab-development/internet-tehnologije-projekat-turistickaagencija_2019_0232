@@ -8,17 +8,18 @@ import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { TableModule } from 'primeng/table';
 import { AccommodationCardComponent } from './components/accommodation-card/accommodation-card.component'; 
 
+
 @NgModule({
   declarations: [
     AppComponent,
     AccommodationsComponent,
     NavBarComponent,
-    AccommodationCardComponent
+    AccommodationCardComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    
+    TableModule    
   ],
   providers: [],
   bootstrap: [AppComponent]
