@@ -6,7 +6,8 @@ import { AppComponent } from './app.component';
 import { AccommodationsComponent } from './components/accommodations/accommodations.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { TableModule } from 'primeng/table';
-import { AccommodationCardComponent } from './components/accommodation-card/accommodation-card.component'; 
+import { AccommodationCardComponent } from './components/accommodation-card/accommodation-card.component';
+import { FrameDirective } from './directives/frame.directive'; 
 
 
 @NgModule({
@@ -15,6 +16,8 @@ import { AccommodationCardComponent } from './components/accommodation-card/acco
     AccommodationsComponent,
     NavBarComponent,
     AccommodationCardComponent,
+    FrameDirective,
+
   ],
   imports: [
     BrowserModule,
