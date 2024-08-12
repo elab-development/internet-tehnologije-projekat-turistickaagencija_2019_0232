@@ -1,0 +1,45 @@
+.weather-container {
+    display: flex;
+    justify-content: center; /* Center the weather box horizontally */
+    align-items: center; /* Center the weather box vertically */
+    padding: 0.5rem;
+    box-sizing: border-box;
+    margin-right: 1rem;
+  }
+  
+  .weather-box {
+    display: flex;
+    flex-direction: row; /* Arrange items horizontally */
+    align-items: center; /* Align items vertically in the center */
+    justify-content: space-between; /* Distribute space between the items */
+    padding: 1rem;
+    background-color: #f0f0f0; /* Light gray background */
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .weather-details {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  
+  .weather-detail {
+    display: flex;
+    align-items: center;
+  }
+  
+  .weather-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    gap: 1rem; /* Space between the list items */
+  }
+  
+  .weather-list li {
+    font-size: 1rem;
+    font-weight: 500;
+  }
+  
