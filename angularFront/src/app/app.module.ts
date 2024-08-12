@@ -13,6 +13,7 @@ import {TableModule} from 'primeng/table';
 import { TaxPipe } from './pipes/tax.pipe';
 import { WeatherComponent } from './components/weather/weather.component';
 import { HttpClientModule } from '@angular/common/http';
+import { RoundPipe } from './pipes/round.pipe';
 
 
 @NgModule({
@@ -25,6 +26,7 @@ import { HttpClientModule } from '@angular/common/http';
     FrameDirective,
     TaxPipe,
     WeatherComponent,
+    RoundPipe,
   ],
   imports: [
     BrowserModule,
