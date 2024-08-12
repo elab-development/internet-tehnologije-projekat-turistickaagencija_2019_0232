@@ -1,7 +1,7 @@
 <div class="container accommodations-grid">
 
     <app-accommodation-card *ngFor="let accommodation of accommodations"
-     [accommodation]="accommodation!"
+     [accommodation]="accommodation"
      (accommodationBooked)="handleAccommodationBooked(accommodation)">
     </app-accommodation-card>
 </div>

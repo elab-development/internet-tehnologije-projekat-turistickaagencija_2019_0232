@@ -1,3 +1,4 @@
+/* Global Styles */
 $navbar-bg: #e6e1e1;
 $navbar-text: #000000;
 $navbar-link-hover: rgb(213, 173, 173);
@@ -30,5 +31,14 @@ $navbar-padding: 1rem 1.5rem;
         }
       }
     }
+  }
+
+  /* Centering the 'Total price' div */
+  > div {
+    margin-left: auto;
+    color: $navbar-text;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    background-color: rgba(255, 255, 255, 0.1);
   }
 }

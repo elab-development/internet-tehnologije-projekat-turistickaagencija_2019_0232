@@ -7,7 +7,7 @@ import { Accommodation } from 'src/app/model/accommodation';
   styleUrls: ['./accommodation-card.component.scss']
 })
 export class AccommodationCardComponent {
-  @Input() accommodation!: Accommodation;
+  @Input() accommodation: Accommodation;
 
   @Output() accommodationBooked = new EventEmitter<void>();
 
