@@ -6,7 +6,6 @@ import { Accommodation } from '../model/accommodation';
 })
 export class AccommodationService {
 
-  //Kreirani unosi za smestaje:
   accommodations: Accommodation[] = [
     {
       id: 1,
