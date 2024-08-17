@@ -1,1 +1,7 @@
-<p>accommodations works!</p>
+<div class="container accommodations-grid">
+
+    <app-accommodation-card *ngFor="let accommodation of accommodations"
+     [accommodation]="accommodation"
+     (accommodationBooked)="handleAccommodationBooked(accommodation)">
+    </app-accommodation-card>
+</div>
