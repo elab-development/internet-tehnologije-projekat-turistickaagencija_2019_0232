@@ -312,6 +312,11 @@
   "resolved" "https://registry.npmjs.org/@pkgjs/parseargs/-/parseargs-0.11.0.tgz"
   "version" "0.11.0"
 
+"@remix-run/router@1.8.0":
+  "integrity" "sha512-mrfKqIHnSZRyIzBcanNJmVQELTnX+qagEDlcKO90RgRBVOZGSGvZKeDihTRfWcqoDn5N/NkUcwWTccnpN18Tfg=="
+  "resolved" "https://registry.npmjs.org/@remix-run/router/-/router-1.8.0.tgz"
+  "version" "1.8.0"
+
 "@types/babel__core@^7.20.5":
   "integrity" "sha512-qoQprZvz5wQFJwMDqeseRXWv3rqMvhgpbXFfVyWhbx9X47POIA6i/+dXefEmZKoAgOaTdaIgNSMqMIU61yRyzA=="
   "resolved" "https://registry.npmjs.org/@types/babel__core/-/babel__core-7.20.5.tgz"
@@ -2022,7 +2027,7 @@
   "resolved" "https://registry.npmjs.org/queue-microtask/-/queue-microtask-1.2.3.tgz"
   "version" "1.2.3"
 
-"react-dom@^18.2.0":
+"react-dom@^18.2.0", "react-dom@>=16.8":
   "integrity" "sha512-5m4nQKp+rZRb09LNH59GM4BxTh9251/ylbKIbpe7TpGxfJ+9kv6BLkLBXIjjspbgbnIBNqlI23tRnTWT0snUIw=="
   "resolved" "https://registry.npmjs.org/react-dom/-/react-dom-18.3.1.tgz"
   "version" "18.3.1"
@@ -2040,7 +2045,22 @@
   "resolved" "https://registry.npmjs.org/react-refresh/-/react-refresh-0.14.2.tgz"
   "version" "0.14.2"
 
-"react@^18.2.0", "react@^18.3.1":
+"react-router-dom@^6.15.0":
+  "integrity" "sha512-aR42t0fs7brintwBGAv2+mGlCtgtFQeOzK0BM1/OiqEzRejOZtpMZepvgkscpMUnKb8YO84G7s3LsHnnDNonbQ=="
+  "resolved" "https://registry.npmjs.org/react-router-dom/-/react-router-dom-6.15.0.tgz"
+  "version" "6.15.0"
+  dependencies:
+    "@remix-run/router" "1.8.0"
+    "react-router" "6.15.0"
+
+"react-router@6.15.0":
+  "integrity" "sha512-NIytlzvzLwJkCQj2HLefmeakxxWHWAP+02EGqWEZy+DgfHHKQMUoBBjUQLOtFInBMhWtb3hiUy6MfFgwLjXhqg=="
+  "resolved" "https://registry.npmjs.org/react-router/-/react-router-6.15.0.tgz"
+  "version" "6.15.0"
+  dependencies:
+    "@remix-run/router" "1.8.0"
+
+"react@^18.2.0", "react@^18.3.1", "react@>=16.8":
   "integrity" "sha512-wS+hAgJShR0KhEvPJArfuPVN1+Hz1t0Y6n5jLrGQbkb4urgPE/0Rve+1kMB1v/oWgHgm4WIcV+i7F2pTVj+2iQ=="
   "resolved" "https://registry.npmjs.org/react/-/react-18.3.1.tgz"
   "version" "18.3.1"
