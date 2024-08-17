@@ -87,10 +87,12 @@ app.get('/api/profile', (req,res) => {
   }
 });
 
+//Odjava sa sistema
 app.post('/api/logout', (req,res) => {
   res.cookie('token', '').json(true);
 });
 
+//Kacenje slike preko linka
 app.post('/api/upload-by-link', async (req,res) => {
   const {link} = req.body;
   const newName = 'photo' + Date.now() + '.jpg';
@@ -102,6 +104,7 @@ app.post('/api/upload-by-link', async (req,res) => {
   res.json(url);
 });
 
+//Middleware za omogucavanje uploada fotografija na Amazon S3 tip servera, kakav je na MongoDB
 const photosMiddleware = multer({dest:'/tmp'});
 app.post('/api/upload', photosMiddleware.array('photos', 100), async (req,res) => {
   const uploadedFiles = [];
@@ -113,6 +116,68 @@ app.post('/api/upload', photosMiddleware.array('photos', 100), async (req,res) =
   res.json(uploadedFiles);
 });
 
+//Ruta za kreiranje novih smestaja
+app.post('/api/places', (req,res) => {
+  mongoose.connect(process.env.MONGO_URL);
+  const {token} = req.cookies;
+  const {
+    title,address,addedPhotos,description,price,
+    perks,extraInfo,checkIn,checkOut,maxGuests,
+  } = req.body;
+  jwt.verify(token, jwtSecret, {}, async (err, userData) => {
+    if (err) throw err;
+    const placeDoc = await Place.create({
+      owner:userData.id,price,
+      title,address,photos:addedPhotos,description,
+      perks,extraInfo,checkIn,checkOut,maxGuests,
+    });
+    res.json(placeDoc);
+  });
+});
 
+//Ruta za vracanje korisnickih smestaja
+app.get('/api/user-places', (req,res) => {
+  mongoose.connect(process.env.MONGO_URL);
+  const {token} = req.cookies;
+  jwt.verify(token, jwtSecret, {}, async (err, userData) => {
+    const {id} = userData;
+    res.json( await Place.find({owner:id}) );
+  });
+});
+
+//Ruta za vracanje detalja o smestaju prema ID-ju
+app.get('/api/places/:id', async (req,res) => {
+  mongoose.connect(process.env.MONGO_URL);
+  const {id} = req.params;
+  res.json(await Place.findById(id));
+});
+
+//Ruta za azuriranje informacija o smestaju
+app.put('/api/places', async (req,res) => {
+  mongoose.connect(process.env.MONGO_URL);
+  const {token} = req.cookies;
+  const {
+    id, title,address,addedPhotos,description,
+    perks,extraInfo,checkIn,checkOut,maxGuests,price,
+  } = req.body;
+  jwt.verify(token, jwtSecret, {}, async (err, userData) => {
+    if (err) throw err;
+    const placeDoc = await Place.findById(id);
+    if (userData.id === placeDoc.owner.toString()) {
+      placeDoc.set({
+        title,address,photos:addedPhotos,description,
+        perks,extraInfo,checkIn,checkOut,maxGuests,price,
+      });
+      await placeDoc.save();
+      res.json('ok');
+    }
+  });
+});
+
+//Ruta za vracanje svih smestaja koje postoje, koriscena za IndexPage
+app.get('/api/places', async (req,res) => {
+  mongoose.connect(process.env.MONGO_URL);
+  res.json( await Place.find() );
+});
 
 app.listen(4000);
