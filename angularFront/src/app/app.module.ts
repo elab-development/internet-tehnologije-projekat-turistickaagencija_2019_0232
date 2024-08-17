@@ -14,6 +14,7 @@ import { TaxPipe } from './pipes/tax.pipe';
 import { WeatherComponent } from './components/weather/weather.component';
 import { HttpClientModule } from '@angular/common/http';
 import { RoundPipe } from './pipes/round.pipe';
+import { ContactComponent } from './components/contact/contact.component';
 
 
 @NgModule({
@@ -27,6 +28,7 @@ import { RoundPipe } from './pipes/round.pipe';
     TaxPipe,
     WeatherComponent,
     RoundPipe,
+    ContactComponent,
   ],
   imports: [
     BrowserModule,
