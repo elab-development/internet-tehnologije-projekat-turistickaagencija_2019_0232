@@ -89,7 +89,7 @@ export default function PlacesFormPage() {
             <form onSubmit={savePlace}>
                 {preInput(
                     "Naslov",
-                    "Naslov bi trebalo da bude što privlačniji korisnicima platforme."
+                    "Naslov bi trebalo da bude što privlačniji korisnicima platforme turisticke agencije."
                 )}
                 <input
                     type="text"
@@ -97,14 +97,14 @@ export default function PlacesFormPage() {
                     onChange={(ev) => setTitle(ev.target.value)}
                     placeholder="Naslov oglasa"
                 />
-                {preInput("Adresa", "Adresa mesta koju postavljaš za oglas.")}
+                {preInput("Adresa", "Adresa mesta koju postavljaš za svoj smestaj.")}
                 <input
                     type="text"
                     value={address}
                     onChange={(ev) => setAddress(ev.target.value)}
                     placeholder="Mije Kovačevića..."
                 />
-                {preInput("Fotografije", "Što više fotografija, to bolje!")}
+                {preInput("Fotografije", "Postavi vise fotografija kako bi smestaj izgledao relevantnije!")}
                 <PhotosUploader
                     addedPhotos={addedPhotos}
                     onChange={setAddedPhotos}
@@ -116,7 +116,7 @@ export default function PlacesFormPage() {
                 />
                 {preInput(
                     "Osobine",
-                    "Odaberi sve povlastice koje postoje u tvom smeštaju."
+                    "Odaberi sve povlastice koje postoje u smeštaju."
                 )}
                 <div className="grid mt-2 gap-2 grid-cols-2 md:grid-cols-3 lg:grid-cols-6">
                     <Perks selected={perks} onChange={setPerks} />
