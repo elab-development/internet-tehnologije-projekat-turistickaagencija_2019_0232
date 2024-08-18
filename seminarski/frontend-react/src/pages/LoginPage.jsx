@@ -13,10 +13,10 @@ export default function LoginPage() {
         try {
             const { data } = await axios.post("/login", { email, password });
             setUser(data);
-            alert("Login successful");
+            alert("Login uspesan!");
             setRedirect(true);
         } catch (e) {
-            alert("Login failed");
+            alert("Login neuspesan!");
         }
     }
 
@@ -33,14 +33,14 @@ export default function LoginPage() {
                 <form className="space-y-4" onSubmit={handleLoginSubmit}>
                     <input
                         type="email"
-                        placeholder="Unesi ispravnu email adresu..."
+                        placeholder="tvojaemailadresa@gmail.com"
                         className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring focus:ring-blue-200 focus:border-blue-500"
                         value={email}
                         onChange={(ev) => setEmail(ev.target.value)}
                     />
                     <input
                         type="password"
-                        placeholder="Unesi svoju sifru..."
+                        placeholder="Tvoja sifra..."
                         className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring focus:ring-blue-200 focus:border-blue-500"
                         value={password}
                         onChange={(ev) => setPassword(ev.target.value)}

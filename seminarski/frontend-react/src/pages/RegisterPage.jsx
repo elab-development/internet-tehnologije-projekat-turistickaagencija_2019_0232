@@ -26,19 +26,19 @@ export default function RegisterPage() {
                 <form className="max-w-md mx-auto" onSubmit={registerUser}>
                     <input
                         type="text"
-                        placeholder="Anja - Turisticka agencija FlyTravel"
+                        placeholder="Anja..."
                         value={name}
                         onChange={(ev) => setName(ev.target.value)}
                     />
                     <input
                         type="email"
-                        placeholder="anja@email.com"
+                        placeholder="anja@email.com..."
                         value={email}
                         onChange={(ev) => setEmail(ev.target.value)}
                     />
                     <input
                         type="password"
-                        placeholder="nekaSloženijaŠifra1234!"
+                        placeholder="složenijaŠifra123..."
                         value={password}
                         onChange={(ev) => setPassword(ev.target.value)}
                     />
