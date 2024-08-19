@@ -10,7 +10,7 @@ Kako bi se pokrenuo Express.js server potrebno je:
 cd seminarski
 cd backend-expressJs
 npm install -g nodemon
-yarn add express
+yarn install
 nodemon index.js
 ```
 
