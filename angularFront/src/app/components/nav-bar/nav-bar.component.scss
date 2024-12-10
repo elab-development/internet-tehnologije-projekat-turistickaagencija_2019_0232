@@ -1,0 +1,44 @@
+/* Global Styles */
+$navbar-bg: #e6e1e1;
+$navbar-text: #000000;
+$navbar-link-hover: rgb(213, 173, 173);
+$navbar-active-bg: #efeee8;
+$navbar-padding: 1rem 1.5rem;
+
+.navbar {
+  background-color: $navbar-bg;
+  padding: $navbar-padding;
+
+  .navbar-nav {
+    display: flex;
+    align-items: center;
+
+    .nav-item {
+      margin-right: 1rem;
+
+      .nav-link {
+        color: $navbar-text;
+        padding: 0.5rem 1rem;
+        transition: background-color 0.3s ease, color 0.3s ease;
+
+        &.active {
+          background-color: $navbar-active-bg;
+        }
+
+        &:hover {
+          color: $navbar-link-hover;
+          background-color: rgba(255, 255, 255, 0.1);
+        }
+      }
+    }
+  }
+
+  /* Centering the 'Total price' div */
+  > div {
+    margin-left: auto;
+    color: $navbar-text;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+}

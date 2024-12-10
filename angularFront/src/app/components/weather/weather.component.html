@@ -1,0 +1,18 @@
+<div *ngIf="weatherInformation" class="weather-container">
+    <div class="weather-box">
+        <div class="weather-box">
+            <div class="weather-details">
+            <div class="weather-detail">
+            <ul class="weather-list">
+            <li><strong>City:</strong> {{ weatherInformation.name }}</li>
+            <li><strong>Country:</strong> {{ weatherInformation.sys.country }}</li>
+            <li><strong>Temperature:</strong> {{ (weatherInformation.main.temp/10 | round:2 ) + "°C"}}</li>
+            <li><strong>Feels Like:</strong> {{ (weatherInformation.main.feels_like/10 | round:2)  + "°C"}}</li>
+            <li><strong>Humidity:</strong> {{ weatherInformation.main.humidity }}</li>
+            <li><strong>Wind Speed:</strong> {{ weatherInformation.wind.speed }}</li>
+            </ul>
+            </div>
+            </div>
+    </div>
+  </div>
+  
